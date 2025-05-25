@@ -1,5 +1,6 @@
 import os
 
+class Config:
 # For a production app, you should use a secret key set in the environment
 # The recommended way to generate a 64char secret key is to run:
 # python -c 'import secrets; print(secrets.token_hex())'

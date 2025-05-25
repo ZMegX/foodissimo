@@ -13,8 +13,8 @@ bp = Blueprint("posts", __name__)
 @bp.route("/create", methods=("GET", "POST"))
 def create():
     if request.method == "POST":
-        author = request.form.get["author"] or "Anonymous"
-        message = request.form.get["message"]
+        author = request.form.get("author") or "Anonymous"
+        message = request.form.get("message")
         if message:
             new_post = Post(author=author, message=message)          
             db.session.add(new_post) #with SQLAlchemy we need to us db.session to add/edit

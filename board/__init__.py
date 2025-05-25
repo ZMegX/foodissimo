@@ -9,7 +9,7 @@ load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_prefixed_env()
+    app.config["SQLALCHEMY_DATABASE_URL"] = os.environ.get("DATABASE_URL")
 
     database.init_app(app)
 

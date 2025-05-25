@@ -7,5 +7,5 @@ DATABASE = os.path.join(os.getcwd(), 'db.sqlite3')
 SECRET_KEY = os.getenv('SECRET_KEY', 'not-set')
 
 # When deploying, set in the environment to the PostgreSQL URL
-SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3')
+SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'postgresql://ucd_foodissimo_user:jWomeOu6qJLajSs27jBrOCUz6h0SRIL7@dpg-d0og09mmcj7s73d586g0-a/ucd_foodissimo')
 SQLALCHEMY_TRACK_MODIFICATIONS = False

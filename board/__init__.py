@@ -13,7 +13,6 @@ def create_app():
 
     database.init_app(app)
 
-
     app.register_blueprint(pages.bp)
     app.register_blueprint(posts.bp)
     print(f"Current Environment: {os.getenv('ENVIRONMENT')}")

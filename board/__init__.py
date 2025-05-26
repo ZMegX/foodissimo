@@ -2,21 +2,19 @@
 import os
 from flask import Flask
 from .config import Config
-from .database import init_db
+from board.database import db
 
-from board import pages, posts, database
+from board import pages, posts
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)  # Load configuration from config.py and particularly the DBMS URI
 
-    init_db()
+    db.init_app(app)
 
     app.register_blueprint(pages.bp)
     app.register_blueprint(posts.bp)
-    print(f"Current Environment: {os.getenv('ENVIRONMENT')}")
-    print(f"Using Database: {app.config.get('DATABASE')}")
-
+   
     return app
 
